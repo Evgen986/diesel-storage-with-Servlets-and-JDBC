@@ -29,7 +29,7 @@ public class ProductServiceImpl implements iProductService {
     }
 
     /**
-     * Получение товара по idю
+     * Получение товара по id.
      * @param id уникальный идентификатор товара.
      * @return Найденный товар.
      * @throws NoSuchProductException исключение при отсутствии товара.

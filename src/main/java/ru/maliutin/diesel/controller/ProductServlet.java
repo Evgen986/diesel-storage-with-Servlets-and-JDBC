@@ -48,7 +48,9 @@ public class ProductServlet extends HttpServlet implements ReadBodyRequest {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(req.getMethod().equals("PATCH")){
             doPatch(req, resp);
-        }else {
+        } else if (req.getMethod().equals("DELETE")) {
+            doDelete(req, resp);
+        } else {
             super.service(req, resp);
         }
     }

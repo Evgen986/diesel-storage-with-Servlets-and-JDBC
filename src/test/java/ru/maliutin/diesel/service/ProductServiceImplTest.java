@@ -101,10 +101,11 @@ public class ProductServiceImplTest {
         ProductDTO exectProductDTO = new ProductDTO();
         Product product = new Product();
 
+        when(productRepository.findProductById(productId)).thenReturn(product);
         doNothing().when(productValidation).validation(exectProductDTO);
         when(mapperDto.toEntity(exectProductDTO)).thenReturn(product);
         when(productRepository.edit(productId, product)).thenReturn(product);
-        when(mapperDto.toDto(product)).thenReturn(exectProductDTO);
+        when(mapperDto.toDto(product)).thenReturn(exectProductDTO).thenReturn(exectProductDTO);
 
         ProductDTO actualProduct = productService.editProduct(productId, exectProductDTO);
 
@@ -112,7 +113,7 @@ public class ProductServiceImplTest {
         verify(productValidation).validation(exectProductDTO);
         verify(mapperDto).toEntity(exectProductDTO);
         verify(productRepository).edit(productId, product);
-        verify(mapperDto).toDto(product);
+        verify(mapperDto, times(2)).toDto(product);
     }
 
     @Test
