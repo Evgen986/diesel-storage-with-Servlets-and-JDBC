@@ -4,7 +4,11 @@ import ru.maliutin.diesel.entity.Product;
 import ru.maliutin.diesel.entity.Technic;
 
 public class MapperDtoImpl implements iMapperDto{
-
+    /**
+     * Преобразование объекта передачи данных в сущность.
+     * @param productDTO объект передачи данных.
+     * @return объект сущности объекта.
+     */
     @Override
     public Product toEntity(ProductDTO productDTO) {
         Product product = new Product();
@@ -18,6 +22,11 @@ public class MapperDtoImpl implements iMapperDto{
         return product;
     }
 
+    /**
+     * Преобразование сущности объекта в объект передачи данных.
+     * @param product объект сущности.
+     * @return объект передачи данных.
+     */
     @Override
     public ProductDTO toDto(Product product) {
         ProductDTO productDTO = new ProductDTO();

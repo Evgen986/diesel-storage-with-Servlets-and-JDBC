@@ -1,0 +1,8 @@
+ru.maliutin.diesel.controller
+ru.maliutin.diesel.dto
+ru.maliutin.diesel.entity
+ru.maliutin.diesel.exception
+ru.maliutin.diesel.integration
+ru.maliutin.diesel.repository
+ru.maliutin.diesel.service
+ru.maliutin.diesel.utils.validation

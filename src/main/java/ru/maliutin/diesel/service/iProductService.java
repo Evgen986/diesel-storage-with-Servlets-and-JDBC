@@ -30,7 +30,7 @@ public interface iProductService {
 
     /**
      * Изменение товара.
-     * @productId идентификатор товара.
+     * @param productId идентификатор товара.
      * @param productDTO объект передачи данных.
      * @return измененный товар.
      */
