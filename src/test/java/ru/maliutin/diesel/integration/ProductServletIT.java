@@ -1,4 +1,4 @@
-package ru.maliutin.diesel.controller.integration_test;
+package ru.maliutin.diesel.integration;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
