@@ -2,6 +2,7 @@ package ru.maliutin.diesel.repository;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,12 +12,10 @@ import java.util.Properties;
  * Менеджер соединения с БД.
  */
 public class DataBaseManager implements iDataBaseManager, AutoCloseable{
-    private final String pathProperties;
 
     private Connection connection;
 
-    public DataBaseManager(String pathProperties) {
-        this.pathProperties = pathProperties;
+    public DataBaseManager() {
     }
 
     /**
@@ -26,7 +25,8 @@ public class DataBaseManager implements iDataBaseManager, AutoCloseable{
     @Override
     public Connection getConnection() throws SQLException{
         Properties properties = new Properties();
-        try(FileInputStream inputStream = new FileInputStream(pathProperties)){
+        try(InputStream inputStream = getClass()
+                .getClassLoader().getResourceAsStream("db.properties")){
             properties.load(inputStream);
         }catch (IOException e){
             e.printStackTrace();

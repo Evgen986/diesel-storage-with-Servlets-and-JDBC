@@ -5,7 +5,7 @@ create table product.t_product
     product_id         serial primary key,
     c_title            varchar(200) not null check ( length(trim(c_title)) >= 3 ),
     c_catalogue_number varchar(50),
-    c_program_number   int          not null check ( c_catalogue_number > 0 )
+    c_program_number   int          not null check ( c_program_number > 0 )
 );
 
 create table product.t_technic

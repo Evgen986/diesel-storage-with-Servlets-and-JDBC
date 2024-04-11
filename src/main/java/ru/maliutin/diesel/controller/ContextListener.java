@@ -26,8 +26,7 @@ public class ContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         final ServletContext servletContext = sce.getServletContext();
-        final iDataBaseManager dataBaseManager =
-                new DataBaseManager("D:\\Aston\\HW\\task_2\\diesel\\src\\main\\resources\\db.properties"); // TODO убрать абсолютный путь
+        final iDataBaseManager dataBaseManager = new DataBaseManager();
         final ProductMapper productMapper = new ProductMapper();
         final iProductRepository productRepository = new ProductRepositoryImpl(dataBaseManager, productMapper);
         final iValidationService<ProductDTO> validationService = new ProductValidation();
