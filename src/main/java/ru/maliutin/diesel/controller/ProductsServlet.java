@@ -50,11 +50,7 @@ public class ProductsServlet extends HttpServlet implements ReadBodyRequest {
             pw.println(response);
         }catch (SQLException e){
             resp.setStatus(500);
-            StringWriter sw = new StringWriter();
-            PrintWriter pw1 = new PrintWriter(sw);
-            e.printStackTrace(pw1);
-            String exception = sw.toString();
-            pw.println(exception);
+            pw.println(e.getMessage());
         }
     }
 
