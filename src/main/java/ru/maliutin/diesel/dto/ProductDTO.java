@@ -23,7 +23,8 @@ import java.util.List;
 public class ProductDTO implements Serializable {
 
     @NotNull(message = "Название товара не может быть пустым!")
-    @Size(min = 3, message = "Длинна названия техники, должна быть в диапазоне от 3 до 200 символов!")
+    @Size(min = 3, max = 200,
+            message = "Длинна названия товара, должна быть в диапазоне от 3 до 200 символов!")
     private String title;
     private String catalogueNumber;
     @NotNull(message = "Внутренний номер не может быть пустым!")

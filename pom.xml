@@ -15,9 +15,9 @@
     <jackson-databind.version>2.17.0</jackson-databind.version>
     <lombok.version>1.18.32</lombok.version>
     <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
-    <flyway-core.version>10.10.0</flyway-core.version>
     <junit.version>5.10.2</junit.version>
     <mockito.version>5.11.0</mockito.version>
+    <spring.version>6.1.5</spring.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
@@ -47,11 +47,6 @@
       <version>${postgresql.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
-      <version>${flyway-core.version}</version>
-    </dependency>
     <!-- endregion -->
 
     <!-- region Utils -->
@@ -100,14 +95,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>6.1.5</version>
+      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>6.1.5</version>
+      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
 
