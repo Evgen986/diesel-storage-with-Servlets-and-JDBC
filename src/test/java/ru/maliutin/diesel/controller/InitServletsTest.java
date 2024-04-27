@@ -41,7 +41,7 @@ public class InitServletsTest {
                 .thenReturn(new ObjectMapper());
         productsServlet.init(config);
 
-        assertEquals(ProductServiceImpl.class, getFieldClass(productsServlet, "productService"));
+        assertEquals(ProductServiceImpl.class, getFieldClass(productsServlet, "productService")); // несколько ассертов нужно пихать в assertAll
         assertEquals(ObjectMapper.class, getFieldClass(productsServlet, "objectMapper"));
     }
 
