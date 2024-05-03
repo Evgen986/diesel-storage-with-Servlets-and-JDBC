@@ -22,7 +22,7 @@ import java.sql.SQLException;
 /**
  * Сервлет обработки запросов с идентификатором товара.
  */
-@WebServlet(urlPatterns = "/product/*")
+@WebServlet(urlPatterns = "/product/*") // зачем тут разбиение на два сервлета, сущность то одна
 public class ProductServlet extends HttpServlet implements ReadBodyRequest {
 
     private iProductService productService;
